@@ -216,12 +216,26 @@ function App() {
                 </OptionContainer>
               )}
               <SocialContainer>
-                <SocialIcon type="github">
-                  <FaGithub size="2rem" />
-                </SocialIcon>
-                <SocialIcon type="linkedin">
-                  <FaLinkedinIn size="2rem" />
-                </SocialIcon>
+                <a
+                  href="https://github.com/fidelmarques"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <SocialIcon type="github">
+                    <FaGithub size="2rem" />
+                    <span>GitHub</span>
+                  </SocialIcon>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/fidelmarques/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <SocialIcon type="linkedin">
+                    <FaLinkedinIn size="2rem" />
+                    <span>LinkedIn</span>
+                  </SocialIcon>
+                </a>
               </SocialContainer>
             </AMMain>
           )}

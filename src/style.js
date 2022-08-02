@@ -198,32 +198,77 @@ export const SocialContainer = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 80px;
+  width: 250px;
   margin: 25px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
   gap: 15px;
 `;
 
 export const SocialIcon = styled.div`
-  width: 100%;
-  height: 80px;
+  width: 30px;
+  height: 30px;
+  padding: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: white;
   border-radius: 100%;
   z-index: 999;
+  transition: width 0.3s, border-radius 3s;
+
+  span {
+    display: none;
+    opacity: 0;
+    color: white;
+  }
+
+  svg {
+    fill: black;
+    align-self: center;
+    justify-self: center;
+  }
 
   &:hover {
     cursor: pointer;
+    width: 140px;
+    border-radius: 40px;
+    transition: 0.1s width 0.3s;
+    justify-content: space-between;
+    align-items: center;
+
     background-color: ${(props) =>
       (props.type === "github" && "#161B22") ||
       (props.type === "linkedin" && "#0A66C2")};
 
+    span {
+      display: unset;
+      position: absolute;
+      right: 20px;
+      color: white;
+      font-size: 1.5rem;
+      opacity: 1;
+      animation: 0.5s fadein;
+      z-index: 1;
+
+      @keyframes fadein {
+        0% {
+          opacity: 0;
+        }
+        60% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+
     svg {
+      position: absolute;
       fill: white;
+      z-index: 999;
     }
   }
 `;
