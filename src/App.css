@@ -5,6 +5,20 @@ ul {
   all: unset;
 }
 
+::-webkit-scrollbar {
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #feddbc; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #548b7f; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #feddbc; /* creates padding around scroll thumb */
+}
+
 :root {
   --Html5: #e54c21;
 }

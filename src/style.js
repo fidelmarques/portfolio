@@ -181,6 +181,19 @@ export const OptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
+  width: 80%;
+  align-self: center;
+
+  p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    font-size: 1.5rem;
+    text-align: center;
+    align-self: center;
+  }
 `;
 
 export const VoltarHome = styled.div`
@@ -269,6 +282,59 @@ export const SocialIcon = styled.div`
       position: absolute;
       fill: white;
       z-index: 999;
+    }
+  }
+`;
+
+export const ProjectList = styled.div`
+  flex: 1;
+  display: flex;
+  gap: 5rem;
+  width: 100%;
+  overflow-x: auto;
+`;
+
+export const ProjectCard = styled.div`
+  background-color: #b0c3ff;
+  min-width: 250px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5px;
+  box-shadow: 2px 2px 5px #4e4e4e;
+
+  img {
+    width: 100%;
+    box-shadow: 2px 2px 5px #4e4e4e;
+  }
+
+  span {
+    font-size: 1.5rem;
+    color: #ffeab0;
+    text-shadow: 2px 2px 5px #4e4e4e;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+    a {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      svg {
+        color: #4e4e4e;
+      }
+
+      :hover {
+        svg {
+          color: #fafafa;
+        }
+      }
     }
   }
 `;

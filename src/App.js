@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import photo from "./img/photo.jpg";
+import naMedida from "./img/na-medida.png";
+import genius from "./img/genius.png";
+import kenzieHub from "./img/kenzie-hub.png";
+import kenzieShop from "./img/kenzie-shop.png";
+import megabyteShop from "./img/megabyte-shop.png";
+
 import {
   HomeBG,
   HeaderTitle,
@@ -23,6 +29,8 @@ import {
   OptionContainer,
   SocialContainer,
   SocialIcon,
+  ProjectList,
+  ProjectCard,
 } from "./style";
 import {
   SiHtml5,
@@ -32,7 +40,7 @@ import {
   SiStyledcomponents,
   SiRedux,
 } from "react-icons/si";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 function App() {
   const [showHome, setShowHome] = useState(true);
@@ -48,6 +56,7 @@ function App() {
   const [tech, setTech] = useState("");
   const [cl, setCl] = useState("");
   const [animate, setAnimate] = useState("");
+  const [title, setTitle] = useState("Escolha sua opção:");
 
   const [animation, setAnimation] = useState(false);
 
@@ -170,7 +179,7 @@ function App() {
           </AMHeader>
           {showMenu && (
             <AMMain>
-              <MainTitle>Escolha sua opção:</MainTitle>
+              <MainTitle>{title}</MainTitle>
               {showBC && (
                 <ButtonContainer opt={showOption} animation={animate}>
                   <Btn
@@ -181,6 +190,7 @@ function App() {
                         setShowBC(false);
                         setShowBio(true);
                         setShowProjects(false);
+                        setTitle("Sobre mim:");
                       }, 1000);
                     }}
                   >
@@ -194,6 +204,7 @@ function App() {
                         setShowBC(false);
                         setShowProjects(true);
                         setShowBio(false);
+                        setTitle("Projetos:");
                       }, 1000);
                     }}
                   >
@@ -203,12 +214,147 @@ function App() {
               )}
               {!showBC && (
                 <OptionContainer>
-                  {showBio && "Bio"}
-                  {showProjects && "Projetos"}
+                  {showBio && (
+                    <p>
+                      Olá, meu nome é Fidel Marques, tenho 24 anos e sou natural
+                      de Juiz de Fora - MG. Atualmente sou Desenvolvedor Front
+                      End, graduando em Engenharia Elétrica - Habilitação em
+                      Sistemas Eletrônicos pela UFJF e Desenvolvedor Back End em
+                      formação pela Kenzie Academy Brasil.
+                    </p>
+                  )}
+                  {showProjects && (
+                    <ProjectList>
+                      <ProjectCard>
+                        <img src={naMedida} alt="Screenshot Na Medida" />
+                        <span>Na Medida</span>
+                        <div>
+                          <a
+                            href="https://github.com/Projeto-Final-Na-medida-Atelie/na-medida-atelie"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <FaGithub size="2rem" />
+                          </a>
+                          <a
+                            href="https://projeto-na-medida.vercel.app/"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <FaExternalLinkAlt size="2rem" />
+                          </a>
+                        </div>
+                      </ProjectCard>
+                      <ProjectCard>
+                        <img src={kenzieShop} alt="Screenshot Kenzie Shop" />
+                        <span>Kenzie Shop (Context API)</span>
+                        <div>
+                          <a
+                            href="https://github.com/fidelmarques/kenzie-shop-contextapi"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <FaGithub size="2rem" />
+                          </a>
+                          <a
+                            href="https://kenzie-shop-mauve.vercel.app/"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <FaExternalLinkAlt size="2rem" />
+                          </a>
+                        </div>
+                      </ProjectCard>
+                      <ProjectCard>
+                        <img src={kenzieShop} alt="Screenshot Kenzie Shop" />
+                        <span>Kenzie Shop (Redux)</span>
+                        <div>
+                          <a
+                            href="https://github.com/fidelmarques/kenzieshop-redux"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <FaGithub size="2rem" />
+                          </a>
+                          <a
+                            href="https://react-entrega-s3-kenzieshop-fidelmarques-git-main-fidelmarques.vercel.app/"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <FaExternalLinkAlt size="2rem" />
+                          </a>
+                        </div>
+                      </ProjectCard>
+                      <ProjectCard>
+                        <img src={kenzieHub} alt="Screenshot Kenzie Hub" />
+                        <span>Kenzie Hub</span>
+                        <div>
+                          <a
+                            href="https://github.com/fidelmarques/kenzie-hub"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <FaGithub size="2rem" />
+                          </a>
+                          <a
+                            href="https://react-entrega-s2-kenzie-hub-fidelmarques-fidelmarques.vercel.app/"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <FaExternalLinkAlt size="2rem" />
+                          </a>
+                        </div>
+                      </ProjectCard>
+                      <ProjectCard>
+                        <img src={genius} alt="Screenshot Genius Game" />
+                        <span>Genius Game</span>
+                        <div>
+                          <a
+                            href="https://github.com/fidelmarques/genius-game"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <FaGithub size="2rem" />
+                          </a>
+                          <a
+                            href="https://fidelmarques.github.io/genius-game/"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <FaExternalLinkAlt size="2rem" />
+                          </a>
+                        </div>
+                      </ProjectCard>
+                      <ProjectCard>
+                        <img
+                          src={megabyteShop}
+                          alt="Screenshot Megabyte Shop"
+                        />
+                        <span>Megabyte Shop</span>
+                        <div>
+                          <a
+                            href="https://github.com/fidelmarques/megabyte-shop"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <FaGithub size="2rem" />
+                          </a>
+                          <a
+                            href="https://fidelmarques.github.io/megabyte-shop/"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <FaExternalLinkAlt size="2rem" />
+                          </a>
+                        </div>
+                      </ProjectCard>
+                    </ProjectList>
+                  )}
                   <Btn
                     onClick={() => {
                       setShowOption(false);
                       setShowBC(true);
+                      setTitle("Escolha sua opção:");
                     }}
                   >
                     Voltar
